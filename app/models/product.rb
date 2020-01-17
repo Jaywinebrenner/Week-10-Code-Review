@@ -6,7 +6,7 @@ class Product < ApplicationRecord
   before_save(:titleize_product)
   scope :search, -> (product_parameter) { where("name like ?", "%#{product_parameter}%")}
   scope :buy_usa, -> { where(country_of_origin: "USA") }
-scope :three_most_recent, -> { order(created_at: :desc).limit(3)}
+  scope :three_most_recent, -> { order(created_at: :desc).limit(3)}
 
   private
   def titleize_product

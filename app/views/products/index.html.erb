@@ -8,7 +8,7 @@
   <div class="row">
     <div class="col-lg-12">
       <h5>Mario's Discount Specialty Foods specializes in specialty foods that are discounted. Mario provides edible specialty ingredients at rates which will inspire dance and reverve head trauma. Please support Mario's Discount Specialty Foods by purchasing Mario's discounted products that are guarenteed to be edible.</h5>
-<hr>
+      <hr>
       <form>
         <label for="">Search Mario's Products:</label>
         <input type="text" name="search">
@@ -22,8 +22,8 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-lg-4">
-      <h1>All Products Available</h1>
+    <div class="col-lg-3">
+      <h3>All Products Available</h3>
       <h4><%= link_to "Create new product", new_product_path %></h4>
 
       <% if @products.any? %>
@@ -37,8 +37,8 @@
       <% end %>
     </div>
 
-    <div class="col-lg-4">
-      <h1>Products made in the USA</h1>
+    <div class="col-lg-3">
+      <h3>Products made in the USA</h3>
       <% if @usa_products.any? %>
       <ul>
         <% @usa_products.each do |product| %>
@@ -50,10 +50,21 @@
       <% end %>
     </div>
 
-<div class="col-lg-4">
-  <h1>colum 3</h1>
-</div>
-
+    <div class="col-lg-3">
+      <h3>The Three Most Recently Added Products</h3>
+      <% if @three_most_recent.any? %>
+      <ul>
+        <% @three_most_recent.each do |product| %>
+        <li><%= link_to product.name, product_path(product)%></li>
+        <% end %>
+      </ul>
+      <% else %>
+      <p>Looks like we don't have much in stock.</p>
+      <% end %>
+    </div>
+    <div class="col-lg-3">
+      <h3>Column 4</h3>
+    </div>
   </div>
 </div>
 <hr>
