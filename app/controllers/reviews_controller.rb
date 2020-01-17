@@ -15,26 +15,26 @@ class ReviewsController < ApplicationController
     end
   end
 
-   def show
-  @product = Product.find(params[:product_id])
-  @review = Review.find(params[:id])
-  render :show
-end
+  def show
+    @product = Product.find(params[:product_id])
+    @review = Review.find(params[:id])
+    render :show
+  end
 
-def edit
-  @product = Product.find(params[:product_id])
-  @review = Review.find(params[:id])
-  render :edit
-end
-
-def update
-  @review = Review.find(params[:id])
-  if @review.update(review_params)
-    redirect_to product_path(@review.product)
-  else
+  def edit
+    @product = Product.find(params[:product_id])
+    @review = Review.find(params[:id])
     render :edit
   end
-end
+
+  def update
+    @review = Review.find(params[:id])
+    if @review.update(review_params)
+      redirect_to product_path(@review.product)
+    else
+      render :edit
+    end
+  end
 
 
   def destroy
@@ -44,9 +44,9 @@ end
   end
 
 
-   private
-     def review_params
-       params.require(:review).permit(:name, :lyrics)
-     end
+  private
+  def review_params
+    params.require(:review).permit(:author, :content_body, :rating)
+  end
 
 end
