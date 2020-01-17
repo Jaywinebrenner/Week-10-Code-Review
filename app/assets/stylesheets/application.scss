@@ -17,11 +17,28 @@
  *= require_self
  */
 
-
+.row{
+  width: 100%;
+   text-align: center;
+}
+#about{
+  width: 300px;
+  text-align: center;
+  background-color: white;
+  display: inline-block;
+margin: 0 auto;
+padding: 3px;
+}
+.error{
+  color: #e32249;
+}
 h1, h2{
-  color: #333366
+  color: #333366;
 }
 
+h4{
+  color: #eb4d55;
+}
 body {
   background-color: #f6e1e1;
   text-align: center;

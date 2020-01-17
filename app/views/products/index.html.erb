@@ -2,13 +2,20 @@
   <h1 class="header1">Mario's</h1>
   <h2 class="header2">Discount Specialty Foods</h2>
 </div>
-
+<div class="container">
+  <div class="row">
+    <div id="about" class="col-lg-12">
+      <h5>Mario's Discount Specialty Foods specializes in specialty foods that are discounted. Mario provides the freshest specialty ingredients at discounted rates. Your teeth will not break when eating Mario's discounted specialty foods from Mario's Discount Specialty Foods.</h5>
+    </div>
+  </div>
+</div>
 
 <div class="container">
   <div class="row">
     <div class="col-lg-6">
 
       <h1>Products</h1>
+      <h4><%= link_to "Create new product", new_product_path %></h4>
 
       <% if @products.any? %>
       <ul>
@@ -21,7 +28,6 @@
       <% end %>
 
 
-      <p><%= link_to "Create new product", new_product_path %></p>
     </div>
 
     <div class="col-lg-6">

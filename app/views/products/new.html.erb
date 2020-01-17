@@ -1,6 +1,6 @@
 
 <% if @product.errors.any? %>
-<h3>Please fix these errors:</h3>
+<h3 class="error">Please fix these errors:</h3>
 <ul>
   <% @product.errors.full_messages.each do |message| %>
   <li><%= message %></li>
