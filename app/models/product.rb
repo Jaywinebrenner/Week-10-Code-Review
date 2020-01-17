@@ -8,6 +8,10 @@ class Product < ApplicationRecord
   scope :buy_usa, -> { where(country_of_origin: "USA") }
   scope :three_most_recent, -> { order(created_at: :desc).limit(3)}
 
+  def self.most_reviewed
+  where(genre: "Rock")
+end
+
   private
   def titleize_product
     self.name = self.name.titleize
