@@ -6,13 +6,6 @@ class ProductsController < ApplicationController
     render :index
   end
 
-  # def buy_usa
-  #   if params[:usa]
-  #     @products = Product.buy_usa
-  #   end
-  #   render :index
-  # end
-
   def new
     @product = Product.new
     render :new
