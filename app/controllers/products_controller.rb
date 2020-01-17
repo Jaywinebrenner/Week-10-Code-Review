@@ -1,7 +1,9 @@
 class ProductsController < ApplicationController
 
   def index
+
     @products = Product.all
+    # @review = Review.find(params[:id])
     render :index
   end
 

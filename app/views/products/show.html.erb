@@ -4,6 +4,7 @@
 
 <% if @product.reviews.any? %>
   <h4>Here are the reviews for this product:</h4>
+  <hr>
 
   <% @product.reviews.each do |review| %>
     <ul>
@@ -15,12 +16,13 @@
 <% else %>
   <p>No reviews are listed for this product.</p>
 <% end %>
-
+<hr>
 <p><%= link_to "Add a review", new_product_review_path(@product) %></p>
-
-<p><%= link_to "Edit", edit_product_path(@product) %></p>
+<p> | </p>
+<p><%= link_to "Edit Product", edit_product_path(@product) %></p>
+<p> | </p>
 <p><%= link_to "Delete product", product_path(@product),
                         :data => {:confirm => "Are you sure?",
                                        :method => "delete"} %></p>
-
+<p> | </p>
 <p><%= link_to "Return to products", products_path %></p>

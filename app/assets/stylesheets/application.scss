@@ -18,13 +18,17 @@
  */
 
 
+h1, h2{
+  color: #333366
+}
+
 body {
-  background-color: lightblue;
+  background-color: #f6e1e1;
   text-align: center;
 }
 
 .header-top{
-  background-color: #c9485b;
+  background-color: #eb4d55;
   text-align: center;
 }
 
@@ -43,4 +47,8 @@ body {
 ul{
   list-style-type: none;
   list-style-position: inside;
+}
+
+p{
+  display: inline;
 }

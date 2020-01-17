@@ -1,11 +1,14 @@
+
 <% if @product.errors.any? %>
-  <h3>Please fix these errors:</h3>
-  <ul>
-    <% @product.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
+<h3>Please fix these errors:</h3>
+<ul>
+  <% @product.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+  <% end %>
+</ul>
 <% end %>
 
-
+<h1>Let's make a new product.</h1>
 <%= render "layouts/product_form" %>
+<hr>
+<p><%= link_to "Return to products", products_path %></p>

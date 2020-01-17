@@ -1,3 +1,15 @@
+<% if @review.errors.any? %>
+  <h3>The review must be between 50 - 250 characters.</h3>
+  <ul>
+    <% @review.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+
+
 <h1>Add a new review:</h1>
 
 <%= form_for [@product, @review] do |f| %>
@@ -13,4 +25,4 @@
 <p><%= f.submit %></p>
 <% end %>
 
-<%= render "layouts/product_form" %>
+<!-- <p><%= link_to "Return to products", products_path %></p> -->
