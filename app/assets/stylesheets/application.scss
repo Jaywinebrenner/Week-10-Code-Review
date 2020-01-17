@@ -17,6 +17,10 @@
  *= require_self
  */
 
+ img{
+   width: 270px;
+ }
+
 .row{
   width: 100%;
    text-align: center;
@@ -24,7 +28,7 @@
 #about{
   width: 300px;
   text-align: center;
-  background-color: white;
+  background-color:  #eb4d55;
   display: inline-block;
 margin: 0 auto;
 padding: 3px;
@@ -33,20 +37,22 @@ padding: 3px;
   color: #e32249;
 }
 h1, h2{
-  color: #333366;
+  color: black;
 }
 
 h4{
   color: #eb4d55;
 }
 body {
-  background-color: #f6e1e1;
+
   text-align: center;
+
 }
 
 .header-top{
   background-color: #eb4d55;
   text-align: center;
+    height: 280px;
 }
 
 .header1{

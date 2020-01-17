@@ -5,4 +5,5 @@ class Review < ApplicationRecord
   validates_length_of :rating, maximum: 5
   validates_length_of :rating, minimum: 1
   validates :author, presence: true
+  
 end
