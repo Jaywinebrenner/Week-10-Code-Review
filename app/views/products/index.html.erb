@@ -4,12 +4,13 @@
   <%= image_tag "mario.png" %>
 </div>
 
-<hr>
+<hr class="hr-thick">
+<hr class="hr-thin">
 <div class="container id="about">
   <div class="row">
     <div class="col-lg-12">
-      <h5>Mario's Discount Specialty Foods specializes in specialty foods that are discounted. Mario provides tastebud-tickling specialty ingredients at discoutned rates which will reverse any trauma your checkbook may be experiencing. Please support Mario's Discount Specialty Foods by purchasing Mario's discounted products that are guarenteed to be edible.</h5>
-      <hr>
+      <h5>Mario's Discount Specialty Foods specializes in specialty foods that are discounted. Mario provides tastebud-tickling specialty ingredients at discoutned rates, writing wrongs and disolving trauma. Please support Mario's Discount Specialty Foods by purchasing Mario's discounted products that are guarenteed to be edible.</h5>
+
       <!-- <form>
         <label for="">Search Mario's Products:</label>
         <input type="text" name="search">
@@ -18,17 +19,18 @@
     </div>
   </div>
 </div>
-
+<hr class="hr-thin">
+<hr class="hr-thick">
 <div class="header-middle">
-  <h2>Have a Look at Mario's Product Line!</h2>
+  <h2 id="middle-text">Have a Look at Mario's Edible Products!</h2>
 </div>
+<h4 id="create-new_product"><%= link_to "Create new product", new_product_path %></h4>
 
 <div class="container">
   <div class="row">
 
     <div class="col-lg-3">
       <h3>All Products Available</h3>
-      <h4><%= link_to "Create new product", new_product_path %></h4>
 
       <% if @products.any? %>
       <ul>
@@ -68,18 +70,15 @@
     </div>
     <div class="col-lg-3">
       <h3>Mario's Most Reviewed Product</h3>
+
     </div>
   </div>
 </div>
-<hr>
-
-
+<hr class="hr-thin">
+<hr class="hr-thick">
 
 <div class="bottom">
 
-
   <%= image_tag "pasta.png" %>
-
-
 
 </div>

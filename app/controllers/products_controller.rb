@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
     @products = Product.all
     @usa_products = Product.buy_usa
     @three_most_recent = Product.three_most_recent
+    # @most_reviews = Product.most_reviews
     render :index
   end
 
@@ -28,13 +29,16 @@ class ProductsController < ApplicationController
     render :edit
   end
 
-
-
+  # def ==(product_to_compare)
+  #   if product_to_compare != nil
+  #     self.name() == product_to_compare.title()
+  #   else
+  #     false
+  #   end
+  # end
 
   def show
     @product = Product.find(params[:id])
-    # @artist = Artist.find(params[:id])
-    # @artists = Artist.all
     render :show
   end
 

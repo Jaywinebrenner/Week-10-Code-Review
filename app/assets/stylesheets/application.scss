@@ -17,6 +17,9 @@
  *= require_self
  */
 
+#middle-text{
+  padding-top: 8px;
+}
  img{
    width: 270px;
  }
@@ -33,12 +36,15 @@
 margin: 0 auto;
 padding: 3px;
 }
+
 .error{
   color: #e32249;
 }
+
 h1, h2{
   color: black;
   margin: 0px;
+  font-family: 'Patua One', cursive;
 }
 
 h4{
@@ -48,10 +54,30 @@ body {
   text-align: center;
 }
 
+#create-new_product{
+  font-size: 3rem;
+  color: #eb4d55;
+  text-decoration: none;
+}
+
+#create-new_product:hover{
+  font-size: 3rem;
+  color: #eb4d55;
+  text-decoration: none;
+}
+.hr-thick{
+  background-color: #eb4d55;
+  height: 4px;
+}
+
+.hr-thin{
+  background-color: #eb4d55;
+  height: 2px;
+}
 .bottom{
   background-color: #eb4d55;
   text-align: center;
-    height: 280px;
+    height: 180px;
 }
 
 .header-top{
@@ -74,6 +100,19 @@ body {
     line-height: 6rem;
 }
 
+.new-header{
+  background-color: #eb4d55;
+  text-align: center;
+    height: 150px;
+    vertical-align: middle;
+}
+
+.new-text{
+  padding-top: 50px;
+  font-family: 'Patua One', cursive;
+  font-size: 5rem;
+}
+
 .header2{
   margin-top: 0px;
   margin-bottom: 0px;
@@ -81,6 +120,9 @@ body {
 
 ul{
   list-style-type: none;
+  list-style-position: inside;
+}
+li{
   list-style-position: inside;
 }
 

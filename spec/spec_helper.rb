@@ -94,3 +94,13 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+
+# DB = PG.connect({:dbname => 'project_employee_app_rails_test'})
+#
+# RSpec.configure do |config|
+#   config.after(:each) do
+#     DB.exec('DELETE FROM products *;')
+#     DB.exec('DELETE FROM reviews *;')
+#   end
+# end
