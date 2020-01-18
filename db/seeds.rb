@@ -9,8 +9,20 @@
 
 Product.destroy_all
 
+countries = ["USA", "Italy", "Cambodia", "Iceland", "Indonesia", "Chad", "Mozambique", "Lesotho", "Jim Varney World", "Freddy Kruegar's Kingdom", "Spain", "India", "Fertilandia"]
+
 50.times do |index|
-  Product.create!(name: Faker::GreekPhilosophers.name)
+  Product.create!(name: Faker::GreekPhilosophers.name,
+    cost: rand(1..500),
+    country_of_origin: countries.sample)
 end
 
 p "Created #{Product.count} products for Mario"
+
+
+250.times do |index|
+  Review.create!(author: Faker::GreekPhilosophers.name,
+    content_body: Faker::Lorem.characters(number: 100),
+    rating: rand(1..5),
+    product_id: rand(1..50))
+  end
