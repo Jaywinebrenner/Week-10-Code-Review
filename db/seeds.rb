@@ -26,3 +26,5 @@ p "Created #{Product.count} products for Mario"
     rating: rand(1..5),
     product_id: rand(1..50))
   end
+
+  p "Created #{Review.count} reviews for Mario's products"
