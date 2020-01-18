@@ -6,7 +6,7 @@ describe 'the product creation path', {:type => :feature} do
     visit '/'
     save_and_open_page
     click_link('Create new product')
-    fill_in('Name' , :with => 'Rat Milk')
+    fill_in('Name' , :with => 'Rat Milk', )
     fill_in('Cost', :with => '100')
     fill_in('Country of origin', :with => '100')
     click_button('Create Product')
@@ -22,41 +22,73 @@ describe 'the product update path', {:type => :feature} do
     fill_in('Cost', :with => '100')
     fill_in('Country of origin', :with => '100')
     click_button('Create Product')
-    click_link('Pig Poppers')
+
+    first(:link, 'Pig Poppers').click
     click_link('Edit Product')
     fill_in('Name' , :with => 'Chalk Poppers')
+    click_button('Update Product')
     expect(page).to have_content('Chalk Poppers')
 
   end
 end
-  #
-  # # # A user should be able to nagivate to a product's detail page and delete the product. The user will then be directed to the index page. The product should no longer be on the list of products.
-  #
-  # describe 'the product delete path', {:type => :feature} do
-  #   it 'allows a user to delete a product' do
-  #     test_product = Product.new({:title => 'Teaching Kids to Code', :id => nil})
-  #     test_product.save
-  #     id = test_product.id
-  #     visit "/products/#{id}/edit"
-  #     click_button('Delete Product')
-  #     visit '/'
-  #     expect(page).not_to have_content("Teaching Kids to Code")
-  #   end
-  # end
-  # #
-  # # # The user should be able to click on a product detail page and see a list of all volunteers working on that product. The user should be able to click on a volunteer to see the volunteer's detail page.
-  # #
-  # describe 'the volunteer detail page path', {:type => :feature} do
-  #   it 'shows a volunteer detail page' do
-  #     test_product = Product.new({:title => 'Teaching Kids to Code', :id => nil})
-  #     test_product.save
-  #     product_id = test_product.id.to_i
-  #     test_volunteer = Volunteer.new({:name => 'Jasmine', :product_id => product_id, :id => nil})
-  #     test_volunteer.save
-  #     visit "/products/#{product_id}"
-  #     click_link('Jasmine')
-  #     fill_in('name', :with => 'Jane')
-  #     click_button('Update Volunteer')
-  #     expect(page).to have_content('Jane')
-  #   end
-  # end
+
+
+describe 'the add a review path', {:type => :feature} do
+  it 'allows a user to add a review' do
+    visit '/'
+    click_link('Create new product')
+    fill_in('Name' , :with => 'Pig Poppers')
+    fill_in('Cost', :with => '100')
+    fill_in('Country of origin', :with => '100')
+    click_button('Create Product')
+    first(:link, 'Pig Poppers').click
+    click_link('Add a review')
+    fill_in('Author' , :with => 'Man Person')
+    fill_in('Content body', :with => 'I love this product, I am whole. I love this product, I am complete. I love this product, I have transcended. I love this product, I now know real meaning.')
+    fill_in('Rating', :with => '2')
+    click_button('Create Review')
+    expect(page).to have_content('Man Person')
+  end
+end
+
+
+describe 'the edit review path', {:type => :feature} do
+  it 'allows a user to edit a review' do
+    visit '/'
+    click_link('Create new product')
+    fill_in('Name' , :with => 'Pig Poppers')
+    fill_in('Cost', :with => '100')
+    fill_in('Country of origin', :with => '100')
+    click_button('Create Product')
+    first(:link, 'Pig Poppers').click
+    click_link('Add a review')
+    fill_in('Author' , :with => 'Man Person')
+    fill_in('Content body', :with => 'I love this product, I am whole. I love this product, I am complete. I love this product, I have transcended. I love this product, I now know real meaning.')
+    fill_in('Rating', :with => '2')
+    click_button('Create Review')
+    click_link('Man Person')
+    click_link('Edit review')
+    fill_in('Content body', :with => 'I like this product, I am whole. I like this product, I am complete. I like this product, I have transcended. I like this product, I now know real meaning.')
+    click_button('Update Review')
+    click_link('Man Person')
+    expect(page).to have_content('I like this product, I am whole. I like this product, I am complete. I like this product, I have transcended. I like this product, I now know real meaning.')
+  end
+end
+
+
+# Javascript issues with accepting the alert
+# describe 'the product delete path', {:type => :feature} do
+#   it 'allows a user to delete a product' do
+#     visit '/'
+#     click_link('Create new product')
+#     fill_in('Name' , :with => 'Pig Poppers')
+#     fill_in('Cost', :with => '100')
+#     fill_in('Country of origin', :with => '100')
+#     click_button('Create Product')
+#     first(:link, 'Pig Poppers').click
+#     click_link('Delete product')
+#     page.driver.browser.switch_to.alert.accept
+#
+#     expect(page).not_to have_content("Pig Poppers")
+#   end
+# end
