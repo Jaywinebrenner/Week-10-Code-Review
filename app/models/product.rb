@@ -7,11 +7,17 @@ class Product < ApplicationRecord
   # scope :search, -> (product_parameter) { where("name like ?", "%#{product_parameter}%")}
   scope :buy_usa, -> { where(country_of_origin: "USA") }
   scope :three_most_recent, -> { order(created_at: :desc).limit(3)}
-  # scope :most_reviews, -> {( ??? )}
+  scope :most_reviews, -> {(
+    select("products.id, products.name, products.cost, count(reviews.id) as number_of_reviews")
+    .joins(:reviews)
+    .group("products.id")
+    .order("number_of_reviews DESC")
+    .limit(1)
+    )}
 
-  private
-  def titleize_product
-    self.name = self.name.titleize
+    private
+    def titleize_product
+      self.name = self.name.titleize
+    end
+
   end
-
-end

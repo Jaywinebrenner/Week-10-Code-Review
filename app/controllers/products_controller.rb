@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
     @products = Product.all
     @usa_products = Product.buy_usa
     @three_most_recent = Product.three_most_recent
-    # @most_reviews = Product.most_reviews
+    @most_reviews = Product.most_reviews
     render :index
   end
 

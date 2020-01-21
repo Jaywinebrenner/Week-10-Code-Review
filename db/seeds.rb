@@ -20,7 +20,6 @@ countries = ["USA", "Italy", "Cambodia", "Iceland", "Indonesia", "Chad", "Mozamb
 
   p "Created #{Product.count} products for Mario"
 
-  # unclear why product ID wont work as it should in my mind..
   seeded_ids = []
   Product.all.each do |product|
     seeded_ids.push(product.id)

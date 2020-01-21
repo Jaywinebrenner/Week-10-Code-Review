@@ -9,8 +9,7 @@
 <div class="container id="about">
   <div class="row">
     <div class="col-lg-12">
-      <h5>Mario's Discount Specialty Foods specializes in specialty foods that are discounted. Mario provides tastebud-tickling specialty ingredients at discoutned rates, writing wrongs and disolving trauma. Please support Mario's Discount Specialty Foods by purchasing Mario's discounted products that are guarenteed to be edible.</h5>
-
+      <h5>Mario's Discount Specialty Foods specializes in specialty foods that are discounted. Mario provides tastebud-tickling specialty ingredients at discoutned rates which right wrongs and disolves trauma. Please support Mario's Discount Specialty Foods by purchasing Mario's discounted products that are guarenteed to be edible.</h5>
       <!-- <form>
         <label for="">Search Mario's Products:</label>
         <input type="text" name="search">
@@ -70,6 +69,15 @@
     </div>
     <div class="col-lg-3">
       <h3>Mario's Most Reviewed Product</h3>
+      <% if @most_reviews.any? %>
+      <ul>
+        <% @most_reviews.each do |product| %>
+        <li><%= link_to product.name, product_path(product)%></li>
+        <% end %>
+      </ul>
+      <% else %>
+      <p>Looks like we don't have much in the way of reviews.</p>
+      <% end %>
 
     </div>
   </div>
